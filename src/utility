@@ -1,0 +1,28 @@
+/*
+ * utility
+ *
+ *  Created on: 18 Mar 2015
+ *      Author: erik
+ */
+
+#ifndef UTILITY_
+#define UTILITY_
+
+#include <sys/time.h>
+#include <stdio.h>
+#include <unistd.h>
+
+namespace model {
+
+	inline double getMillis() {
+		struct timeval end;
+		gettimeofday(&end, NULL);
+		double mtime = (static_cast<double>(end.tv_sec) * 1000 + static_cast<double>(end.tv_usec)/1000.0) + 0.5;
+		return mtime;
+	}
+
+}
+
+
+
+#endif /* UTILITY_ */
